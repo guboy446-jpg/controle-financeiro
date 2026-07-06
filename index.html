@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como Controlar seu Dinheiro com Sabedoria | Guia Completo de Educação Financeira</title>
+<meta name="description" content="Guia prático e completo para dominar suas finanças pessoais: diagnóstico financeiro, regra 50-30-20, orçamento, reserva de emergência, dívidas e investimentos.">
+<meta name="keywords" content="educação financeira, controlar dinheiro, orçamento pessoal, regra 50-30-20, reserva de emergência, investimentos, finanças pessoais">
+<meta property="og:title" content="💰 Como Controlar seu Dinheiro com Sabedoria">
+<meta property="og:description" content="Estratégias práticas e comprovadas para dominar suas finanças pessoais.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --ink:#1e2a3a;
+    --muted:#5b6b7f;
+    --green:#0f9d63;
+    --green-dark:#0b7a4d;
+    --gold:#e0a527;
+    --border:#e6ebf1;
+    --shadow: 0 10px 40px rgba(20,40,60,0.08);
+    --radius: 20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Open Sans', sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:20px;
+  }
+  h1,h2,h3,.brand{font-family:'Poppins', sans-serif;}
+
+  /* Progress bar */
+  #progress{
+    position:fixed; top:0; left:0; height:4px; width:0%;
+    background:linear-gradient(90deg,var(--green),var(--gold));
+    z-index:1000; transition:width .1s ease-out;
+  }
+
+  /* Nav */
+  nav{
+    position:sticky; top:0; z-index:900;
+    background:rgba(255,255,255,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1000px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{font-weight:800; color:var(--green-dark); font-size:1.15rem; display:flex; align-items:center; gap:8px; white-space:nowrap;}
+  .nav-links{
+    display:flex; gap:18px; overflow-x:auto; scrollbar-width:none;
+    font-size:0.85rem; font-weight:600;
+  }
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{
+    color:var(--muted); text-decoration:none; white-space:nowrap;
+    padding:6px 4px; border-bottom:2px solid transparent; transition:.2s;
+  }
+  .nav-links a:hover, .nav-links a.active{color:var(--green-dark); border-bottom-color:var(--green);}
+
+  /* Hero */
+  header.hero{
+    max-width:900px; margin:0 auto; padding:56px 24px 24px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:#eaf7f0; color:var(--green-dark); font-weight:700; font-size:0.8rem;
+    padding:6px 14px; border-radius:999px; margin-bottom:20px;
+  }
+  header.hero h1{
+    font-size:2.7rem; font-weight:800; color:var(--ink); line-height:1.2; margin-bottom:18px;
+  }
+  header.hero h1 span{color:var(--green-dark);}
+  header.hero p.lead{
+    color:var(--muted); font-size:1.15rem; max-width:600px; margin:0 auto 20px;
+  }
+  .meta-row{
+    display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+    font-size:0.9rem; color:var(--muted); font-weight:600;
+  }
+  .meta-row span{display:flex; align-items:center; gap:6px;}
+
+  /* Container / card */
+  main{max-width:900px; margin:0 auto; padding:20px 24px 60px;}
+  .card{
+    background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+    padding:40px 36px; margin-bottom:28px; border:1px solid var(--border);
+    opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;
+  }
+  .card.visible{opacity:1; transform:translateY(0);}
+
+  .section-icon{
+    width:52px; height:52px; border-radius:14px;
+    background:linear-gradient(135deg, var(--green), var(--green-dark));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:1.4rem; margin-bottom:18px;
+    box-shadow:0 6px 16px rgba(15,157,99,0.3);
+  }
+  h2{font-size:1.7rem; font-weight:700; margin-bottom:6px;}
+  .divider{height:3px; width:56px; background:var(--gold); border-radius:3px; margin-bottom:20px;}
+  p{margin-bottom:14px; color:#2c3a4c;}
+  ul, ol{padding-left:22px; margin-bottom:14px;}
+  li{margin-bottom:8px;}
+  strong{color:var(--green-dark);}
+
+  .tip-box{
+    background:#eaf7f0; border-left:4px solid var(--green);
+    padding:16px 20px; border-radius:10px; margin:18px 0; font-size:0.95em;
+  }
+  .warn-box{
+    background:#fdf3e3; border-left:4px solid var(--gold);
+    padding:16px 20px; border-radius:10px; margin:18px 0; font-size:0.95em;
+  }
+  .quote{
+    font-style:italic; color:var(--muted); border-left:3px solid var(--border);
+    padding-left:16px; margin:18px 0;
+  }
+
+  table{width:100%; border-collapse:collapse; margin:18px 0; font-size:0.92em;}
+  th, td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--border);}
+  th{background:#f0f5f2; color:var(--green-dark); font-weight:700;}
+  tr:hover td{background:#fafcfb;}
+
+  .goal-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0;}
+  .goal-grid div{background:#f7faf8; border:1px solid var(--border); border-radius:10px; padding:12px 14px; font-size:0.9em;}
+
+  /* Checklist */
+  .checklist{list-style:none; padding:0;}
+  .checklist li{
+    display:flex; align-items:flex-start; gap:12px; padding:10px 0;
+    border-bottom:1px dashed var(--border);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist i{color:var(--green); margin-top:4px;}
+
+  /* CTA */
+  .cta-box{
+    background:linear-gradient(135deg,#0f9d63,#0b7a4d);
+    color:#fff; border-radius:var(--radius); padding:40px 32px;
+    text-align:center; margin:36px 0; box-shadow:var(--shadow);
+  }
+  .cta-box h3{font-size:1.5rem; margin-bottom:12px; font-weight:800;}
+  .cta-box p{color:rgba(255,255,255,0.9); max-width:520px; margin:0 auto 24px;}
+  .btn-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#fff; color:var(--green-dark); font-weight:700;
+    padding:14px 26px; border-radius:12px; text-decoration:none;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(0,0,0,0.15);}
+  .btn.outline{background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.6);}
+
+  footer{
+    text-align:center; padding:40px 24px; color:var(--muted); font-size:0.88rem;
+    border-top:1px solid var(--border); margin-top:20px;
+  }
+  footer strong{display:block; color:var(--ink); margin-bottom:6px; font-size:1rem;}
+
+  #backToTop{
+    position:fixed; bottom:24px; right:24px; width:48px; height:48px;
+    background:var(--green-dark); color:#fff; border:none; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem;
+    cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    opacity:0; pointer-events:none; transition:opacity .3s ease, transform .2s ease;
+    z-index:800;
+  }
+  #backToTop.show{opacity:1; pointer-events:auto;}
+  #backToTop:hover{transform:translateY(-3px);}
+
+  @media (max-width:640px){
+    header.hero h1{font-size:2rem;}
+    .card{padding:28px 20px;}
+    .goal-grid{grid-template-columns:1fr;}
+    body{font-size:18px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand"><i class="fa-solid fa-sack-dollar"></i> Controle Financeiro</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#intro">Introdução</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#regra">50-30-20</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#reserva">Reserva</a>
+      <a href="#dividas">Dívidas</a>
+      <a href="#investimentos">Investimentos</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#conclusao">Conclusão</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow"><i class="fa-solid fa-seedling"></i> Educação Financeira</span>
+  <h1>💰 Como Controlar <span>seu Dinheiro</span> com Sabedoria</h1>
+  <p class="lead">Não importa quanto você ganha — o que importa é como gerencia. Estratégias práticas e comprovadas para dominar suas finanças pessoais.</p>
+  <div class="meta-row">
+    <span><i class="fa-regular fa-clock"></i> 8 min de leitura</span>
+    <span><i class="fa-regular fa-calendar"></i> Julho de 2026</span>
+    <span><i class="fa-regular fa-user"></i> guboy446-jpg</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="card" id="intro">
+    <div class="section-icon"><i class="fa-solid fa-compass"></i></div>
+    <h2>Introdução</h2>
+    <div class="divider"></div>
+    <p>Controlar o dinheiro é uma das habilidades mais valiosas que você pode desenvolver. Não importa quanto você ganha, o que realmente importa é <strong>como você gerencia</strong> o seu dinheiro. Vamos explorar estratégias práticas e comprovadas para dominar suas finanças pessoais.</p>
+    <div class="quote">"Todo grande patrimônio começa com pequenas decisões consistentes."</div>
+  </section>
+
+  <section class="card" id="diagnostico">
+    <div class="section-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+    <h2>📊 Diagnóstico Financeiro Completo</h2>
+    <div class="divider"></div>
+    <p>Antes de qualquer coisa, você precisa saber exatamente onde está:</p>
+    <ul>
+      <li><strong>Calcule sua renda total</strong> — salário, freelances, investimentos</li>
+      <li><strong>Liste todas as suas despesas</strong> — fixas e variáveis</li>
+      <li><strong>Identifique suas dívidas</strong> — cartão de crédito, empréstimos</li>
+      <li><strong>Avalie seus ativos</strong> — poupança, investimentos</li>
+    </ul>
+    <div class="tip-box"><i class="fa-solid fa-lightbulb"></i> <strong>Dica:</strong> use uma folha de cálculo ou app de controlo para rastrear tudo todos os meses.</div>
+  </section>
+
+  <section class="card" id="objetivos">
+    <div class="section-icon"><i class="fa-solid fa-bullseye"></i></div>
+    <h2>🎯 Objetivos Financeiros Claros</h2>
+    <div class="divider"></div>
+    <p>Defina metas <strong>SMART</strong>:</p>
+    <div class="goal-grid">
+      <div><strong>S</strong>pecífico — "Quero economizar 500.000 Kz"</div>
+      <div><strong>M</strong>ensurável — com números claros</div>
+      <div><strong>A</strong>lcançável — realista para sua situação</div>
+      <div><strong>R</strong>elevante — importante para você</div>
+      <div><strong>T</strong>emporal — com prazo definido</div>
+    </div>
+    <p><strong>Exemplos de objetivos:</strong></p>
+    <ul>
+      <li>Criar uma reserva de emergência (3-6 meses de despesas)</li>
+      <li>Pagar dívidas</li>
+      <li>Investir para o futuro</li>
+      <li>Comprar um imóvel</li>
+    </ul>
+  </section>
+
+  <section class="card" id="regra">
+    <div class="section-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+    <h2>💡 A Regra 50-30-20</h2>
+    <div class="divider"></div>
+    <p>Uma estratégia simples e eficaz para organizar sua renda:</p>
+    <table>
+      <tr><th>Categoria</th><th>%</th><th>O que inclui</th></tr>
+      <tr><td>Necessidades</td><td>50%</td><td>Renda, água/luz, alimentação, transporte</td></tr>
+      <tr><td>Desejos</td><td>30%</td><td>Lazer, viagens, hobbies, streaming</td></tr>
+      <tr><td>Investimento</td><td>20%</td><td>Poupança, investimentos, dívidas</td></tr>
+    </table>
+    <div class="tip-box"><i class="fa-solid fa-calculator"></i> Se você ganha 100.000 Kz: 50.000 em necessidades, 30.000 em desejos, 20.000 em investimentos.</div>
+  </section>
+
+  <section class="card" id="orcamento">
+    <div class="section-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+    <h2>📝 Criando um Orçamento Detalhado</h2>
+    <div class="divider"></div>
+    <p>Um bom orçamento é o seu mapa financeiro:</p>
+    <ol>
+      <li>Liste todas as categorias de despesas</li>
+      <li>Registe quanto gasta em cada uma (últimos 3 meses)</li>
+      <li>Compare com a sua renda</li>
+      <li>Identifique onde pode economizar</li>
+      <li>Revise mensalmente</li>
+    </ol>
+
+    <h3 style="margin-top:20px; font-size:1.1rem;">🚫 Cortando Despesas Desnecessárias</h3>
+    <ul>
+      <li>Cancele assinaturas não utilizadas</li>
+      <li>Renegoceie contas fixas (telefone, internet)</li>
+      <li>Faça listas antes de comprar e evite compras por impulso</li>
+      <li>Compare preços e procure promoções</li>
+    </ul>
+  </section>
+
+  <section class="card" id="reserva">
+    <div class="section-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+    <h2>🏦 Reserva de Emergência</h2>
+    <div class="divider"></div>
+    <p>A sua rede de segurança financeira:</p>
+    <ul>
+      <li><strong>Meta mínima:</strong> 1 mês de despesas</li>
+      <li><strong>Meta ideal:</strong> 3 a 6 meses de despesas</li>
+    </ul>
+    <p><strong>Como construir:</strong></p>
+    <ul>
+      <li>Comece pequeno e automatize as transferências</li>
+      <li>Abra uma conta separada da conta do dia a dia</li>
+      <li>Não toque nela a menos que seja uma emergência real</li>
+    </ul>
+  </section>
+
+  <section class="card" id="dividas">
+    <div class="section-icon"><i class="fa-solid fa-credit-card"></i></div>
+    <h2>💳 Gerindo Dívidas com Inteligência</h2>
+    <div class="divider"></div>
+    <p><strong>Estratégias de pagamento:</strong></p>
+    <ul>
+      <li><strong>Bola de Neve</strong> — pague primeiro as dívidas menores</li>
+      <li><strong>Avalanche</strong> — pague primeiro as de juros mais altos</li>
+    </ul>
+    <div class="warn-box"><i class="fa-solid fa-triangle-exclamation"></i> Negoceie sempre com os credores antes de deixar uma dívida atrasar — evita juros e taxas extra.</div>
+  </section>
+
+  <section class="card" id="investimentos">
+    <div class="section-icon"><i class="fa-solid fa-chart-line"></i></div>
+    <h2>📈 Invista para o Futuro</h2>
+    <div class="divider"></div>
+    <p>Não basta poupar — é preciso fazer o dinheiro trabalhar para você:</p>
+    <ul>
+      <li>Poupança — segura, mas de baixo rendimento</li>
+      <li>Títulos e certificados de depósito — rendimento garantido</li>
+      <li>Fundos de investimento — geridos por profissionais</li>
+      <li>Ações — médio e longo prazo</li>
+    </ul>
+    <div class="tip-box"><i class="fa-solid fa-graduation-cap"></i> Comece sempre por aquilo que entende bem, antes de investir em algo mais complexo.</div>
+  </section>
+
+  <section class="card" id="ferramentas">
+    <div class="section-icon"><i class="fa-solid fa-toolbox"></i></div>
+    <h2>🎓 Educação Financeira &amp; Ferramentas</h2>
+    <div class="divider"></div>
+    <p><strong>Continue aprendendo:</strong></p>
+    <ul>
+      <li>Leia livros sobre finanças pessoais</li>
+      <li>Siga criadores de conteúdo financeiro de confiança</li>
+      <li>Ouça podcasts sobre economia</li>
+    </ul>
+    <p><strong>Ferramentas úteis:</strong> folhas de cálculo (Excel/Google Sheets), apps de controlo de gastos, e plataformas de educação financeira online.</p>
+  </section>
+
+  <section class="card" id="checklist">
+    <div class="section-icon"><i class="fa-solid fa-list-check"></i></div>
+    <h2>✅ Checklist de Ação</h2>
+    <div class="divider"></div>
+    <p>Comece hoje mesmo:</p>
+    <ul class="checklist">
+      <li><i class="fa-regular fa-square-check"></i> Faça o seu diagnóstico financeiro</li>
+      <li><i class="fa-regular fa-square-check"></i> Defina os seus objetivos</li>
+      <li><i class="fa-regular fa-square-check"></i> Crie um orçamento</li>
+      <li><i class="fa-regular fa-square-check"></i> Cancele assinaturas não utilizadas</li>
+      <li><i class="fa-regular fa-square-check"></i> Comece uma reserva de emergência</li>
+      <li><i class="fa-regular fa-square-check"></i> Negoceie as suas dívidas</li>
+      <li><i class="fa-regular fa-square-check"></i> Aprenda sobre investimentos</li>
+      <li><i class="fa-regular fa-square-check"></i> Agende uma revisão mensal</li>
+    </ul>
+  </section>
+
+  <div class="cta-box" id="conclusao">
+    <h3>📘 Quer aprender ainda mais sobre como controlar o seu dinheiro e construir riqueza?</h3>
+    <p>Esta é apenas a primeira parte do conteúdo. Receba agora a Parte 2 com estratégias mais avançadas, exemplos práticos, modelos de orçamento e a versão completa em eBook.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://wa.me/244945161238?text=Ol%C3%A1!%20Quero%20receber%20a%20Parte%202%20do%20guia%20%22Como%20Controlar%20seu%20Dinheiro%20com%20Sabedoria%22%20e%20tamb%C3%A9m%20adquirir%20a%20vers%C3%A3o%20completa%20em%20eBook." target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Receber a Parte 2 no WhatsApp
+      </a>
+      <a class="btn outline" href="https://wa.me/244945161238?text=Ol%C3%A1!%20Quero%20receber%20a%20Parte%202%20do%20guia%20%22Como%20Controlar%20seu%20Dinheiro%20com%20Sabedoria%22%20e%20tamb%C3%A9m%20adquirir%20a%20vers%C3%A3o%20completa%20em%20eBook." target="_blank" rel="noopener">
+        <i class="fa-solid fa-book"></i> Quero o eBook Completo
+      </a>
+    </div>
+  </div>
+
+  <section class="card">
+    <h2 style="font-size:1.3rem;">💭 Conclusão</h2>
+    <div class="divider"></div>
+    <p>Controlar o seu dinheiro com sabedoria não é sobre privação — é sobre <strong>fazer escolhas conscientes</strong> que alinhem os seus gastos com os seus valores e objetivos.</p>
+    <p>Consistência é mais importante que perfeição. Comece agora, o seu futuro agradece! 🚀</p>
+  </section>
+
+</main>
+
+<footer>
+  <strong>guboy446-jpg</strong>
+  Este conteúdo foi criado para promover educação financeira e ajudar milhares de pessoas a organizar melhor as suas finanças. Partilhe este material com quem precisa melhorar a sua vida financeira.
+  <br><br>Última atualização: Julho de 2026
+</footer>
+
+<button id="backToTop" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+  // Reading progress bar
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+
+    // Back to top visibility
+    document.getElementById('backToTop').classList.toggle('show', scrollTop > 400);
+  });
+
+  // Back to top
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Reveal on scroll
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1});
+  cards.forEach(c => observer.observe(c));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('main section[id], .cta-box[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom >= 120) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+
+</body>
+</html>
